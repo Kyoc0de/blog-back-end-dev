@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="admin/_fragments :: head(~{::title})">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>首页</title>
@@ -11,7 +11,7 @@
 </head>
 <body>
 <!--导航-->
-<nav class="ui inverted attached segment k-padded-tb-mini">
+<nav th:replace="admin/_fragments :: menu(1)" class="ui inverted attached segment k-padded-tb-mini">
     <div class="ui container">
         <div class="ui inverted secondary stackable  menu">
             <h2 class="ui header item"> 后台管理</h2>
@@ -118,7 +118,7 @@
 
 
 <!--底部-->
-<footer class="ui inverted vertical segment k-padded-tb-big">
+<footer th:replace="admin/_fragments :: footer" class="ui inverted vertical segment k-padded-tb-big">
     <div class="ui center aligned container">
         <div class="ui inverted divided stackable grid">
             <div class="three wide column">
@@ -156,11 +156,10 @@
     </div>
 </footer>
 
-<!-- jquery -->
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-<!-- semantic js -->
-<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<!--/*/</th:block>/*/-->
 <!--导航隐藏显示切换-->
 <script>
     $('.menu.toggle').click(function () {
