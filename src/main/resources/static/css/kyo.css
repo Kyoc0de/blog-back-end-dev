@@ -1,0 +1,172 @@
+body{
+    background: url("../images/spikes.png");
+}
+
+
+.k-padded-mini{
+    padding: 0.2em !important;
+}
+
+.k-padded-tiny{
+    padding: 0.3em !important;
+}
+
+.k-padded-tb-mini{
+    padding-top: 0.2em !important;
+    padding-bottom: 0.2em !important;
+}
+
+.k-padded-tb-tiny{
+    padding-top: 0.3em !important;
+    padding-bottom: 0.3em !important;
+}
+
+.k-padded-tb-small{
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+}
+
+.k-padded-tb{
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+}
+
+.k-padded{
+    padding: 1em !important;
+}
+
+.k-padded-tb-large{
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
+
+.k-padded-tb-big{
+    padding-top: 3em !important;
+    padding-bottom: 3em !important;
+}
+
+.k-padded-tb-huge{
+    padding-top: 4em !important;
+    padding-bottom: 4em !important;
+}
+
+.k-padded-tb-massive{
+    padding-top: 5em !important;
+    padding-bottom: 5em !important;
+}
+
+/*margin*/
+.k-margin-tb-tiny{
+    margin-top: 0.3em !important;
+    margin-bottom: 0.3em !important;
+}
+
+.k-margin-top-small{
+    margin-top: 0.5em !important;
+}
+
+.k-margin-top{
+    margin-top: 1em !important;
+}
+
+.k-margin-top-large{
+    margin-top: 2em !important;
+}
+.k-margin-bottom-mini{
+    margin-bottom: 0.2em!important;
+
+}
+
+.k-margin-bottom-small{
+    margin-bottom: 0.5em!important;
+
+}
+
+
+.k-padded-lr-responsive{
+    padding-left: 4em !important;
+    padding-right: 4em !important;
+}
+
+.k-text{
+    font-weight: 300 !important;
+    letter-spacing: 1px !important;
+    line-height: 1.8 !important;
+}
+
+.k-text-thin{
+    font-weight: 300 !important;
+}
+
+.k-text-spaced{
+    letter-spacing: 1px !important;
+}
+
+.k-text-lined{
+    line-height: 1.8 !important;
+}
+
+.k-opacity-mini{
+    opacity: 0.8 !important;
+}
+
+.k-opacity-tiny{
+    opacity: 0.6 !important;
+}
+
+/*  display   */
+.k-inline-block{
+    display: inline-block !important;
+}
+
+.k-container{
+    max-width: 72em !important;
+    margin: auto !important;
+}
+
+.k-container-small{
+    max-width: 60em !important;
+    margin: auto !important;
+}
+/*color*/
+.k-black-color{
+    color: #333 !important;
+}
+
+/*position*/
+.k-top-right{
+    position: absolute;
+    top:0;
+    right: 0;
+}
+
+.k-fixed {
+    position: fixed !important;
+    z-index: 10 !important;
+}
+
+.k-right-bottom{
+    bottom: 0!important;
+    right: 0!important;
+}
+
+.k-mobile-show{
+    display: none !important;
+}
+
+@media screen and (max-width: 768px){
+    .k-mobile-hide{
+        display: none!important;
+    }
+    .k-mobile-show{
+        display: block!important;
+    }
+    .k-padded-lr-responsive{
+        padding-left: 0!important;
+        padding-right: 0!important;
+    }
+    .k-mobile-wide{
+        width: 100% !important;
+    }
+}
+
