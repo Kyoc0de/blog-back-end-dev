@@ -18,9 +18,9 @@
     <div class="ui container">
         <div class="ui inverted secondary stackable  menu">
             <h2 class="ui header item"> 后台管理</h2>
-            <a href="./blogs.html" class="k-item k-mobile-hide item active" th:classappend="${n==1}? 'active'"><i class="home icon"></i>博客 | Blog</a>
-            <a href="./types.html" class="k-item k-mobile-hide item " th:classappend="${n==2}? 'active'">分类</a>
-            <a href="./tags.html" class="k-item k-mobile-hide item" th:classappend="${n==3}? 'active'">标签</a>
+            <a href="./blogs.html"  class="k-item k-mobile-hide item " th:classappend="${n==1}? 'active'"><i class="home icon"></i>博客 | Blog</a>
+            <a href="./types.html"th:href="@{/admin/types}" class="k-item k-mobile-hide item " th:classappend="${n==2}? 'active'">分类</a>
+            <a href="./tags.html" th:href="@{/admin/tags}" class="k-item k-mobile-hide item" th:classappend="${n==3}? 'active'">标签</a>
 
             <div class="right k-item k-mobile-hide menu">
                 <div class="ui dropdown item">
