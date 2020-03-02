@@ -11,6 +11,7 @@ import java.util.List;
 @Entity(name = "t_comment")
 public class Comment {
 
+
     @Id
     @GeneratedValue
     private Long id;
@@ -29,6 +30,8 @@ public class Comment {
 
     @ManyToOne
     private Comment parentComment;
+
+    private boolean adminComment;
 
     public Comment() {
     }
