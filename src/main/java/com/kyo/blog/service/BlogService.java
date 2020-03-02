@@ -1,9 +1,11 @@
 package com.kyo.blog.service;
 
+
 import com.kyo.blog.po.Blog;
 import com.kyo.blog.vo.BlogQuery;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+
 
 public interface BlogService {
 
@@ -13,7 +15,7 @@ public interface BlogService {
 
     Blog saveBlog(Blog blog);
 
-    Blog updateBlog(Long id,Blog blog);
+    Blog updateBlog(Long id, Blog blog);
 
     void deleteBlog(Long id);
 }
