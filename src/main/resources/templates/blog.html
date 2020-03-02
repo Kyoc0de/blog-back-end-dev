@@ -48,31 +48,31 @@
             <div class="ui top attached tertiary segment">
                 <div class="ui horizontal link list">
                     <div class="item">
-                        <img src="https://unsplash.it/100/100?image=1001" alt="" class="ui avatar image">
+                        <img src="https://unsplash.it/100/100?image=1001"   th:src="@{${blog.user.avatar}}"  alt="" class="ui avatar image">
                         <div class="content">
-                            <a href="#" class="header">Kyo</a>
+                            <a href="#"  th:text="${blog.user.nickname}" class="header">Kyo</a>
                         </div>
                     </div>
                     <div class="item">
-                        <i class="calendar icon"></i> 2020-02-01
+                        <i class="calendar icon"></i> <span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2020-01-01</span>
                     </div>
                     <div class="item">
-                        <i class="eye icon"></i> 100
+                        <i class="eye icon"></i> <span th:text="${blog.views}">100</span>
                     </div>
                 </div>
             </div>
             <div class="ui attached black segment">
-                <img src="https://unsplash.it/800/450?image=1002" alt="" class="ui fluid rounded image">
+                <img src="https://unsplash.it/800/450?image=1002" th:src="@{${blog.firstPicture}}" alt="" class="ui fluid rounded image">
             </div>
             <div class="ui js-toc-content attached segment">
 <!--                内容-->
                 <div class="ui right aligned basic segment">
-                    <div class="ui blue label">原创</div>
+                    <div class="ui blue label" th:text="${blog.flag}">原创</div>
                 </div>
-                <h2 class="ui center aligned header">这是测试用的文章标题</h2>
+                <h2 class="ui center aligned header" th:text="${blog.title}">这是测试用的文章标题</h2>
                     <br>
 
-                    <div id="content" class="typo typo-selection k-padded-lr-responsive k-padded-tb-large">
+                    <div id="content" class="typo typo-selection k-padded-lr-responsive k-padded-tb-large" th:utext="${blog.content}">
                         <h2 id="section2">排版实例：</h2>
 
                         <p>提供2个排版实例，第一个中文实例来自于来自于<cite class="typo-unique">张燕婴</cite>的《论语》，由于古文排版涉及到的元素比较多，所以采用《论语》中《学而》的第一篇作为排版实例介绍；第2个来自到经典的
@@ -160,7 +160,7 @@ h5,h6{font-size:1em;}
 
 <!--标签-->
                         <div class="ui center aligned k-padded-tb-large grid">
-                            <div class="ui basic blue label">方法论</div>
+                            <div class="ui blue left pointing label" th:each="tag : ${blog.tags}" th:text="${tag.name}">方法论</div>
                         </div>
 
                 <!--赞赏-->
@@ -188,8 +188,8 @@ h5,h6{font-size:1em;}
                 <div class="ui middle aligned grid">
                     <div class="eleven wide column">
                         <ui class="list">
-                            <li>作者：Kyo（联系作者）</li>
-                            <li>发表时间：2020-02-01 09:00</li>
+                            <li>作者：<span th:text="${blog.user.nickname}">kyo</span><a href="#" th:href="@{/about}" target="_blank">（联系作者）</a></li>
+                            <li>发表时间：<span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd HH:mm')}">2020-01-01 00:00</span></li>
                             <li>版权声明：自由转载-非商用-非衍生-保持署名（创意共享3.0许可证）</li>
                             <li>公众号转载：请在文末添加作者公众号二维码</li>
                         </ui>
@@ -375,7 +375,7 @@ h5,h6{font-size:1em;}
 <!---->
 <script src="../static/lib/waypoints/jquery.waypoints.min.js"></script>
 <!--/*/</th:block>/*/-->
-<script>
+<script th:inline="javascript">
     <!--导航隐藏显示切换-->
     $('.menu.toggle').click(function () {
         $('.k-item').toggleClass('k-mobile-hide');
@@ -407,8 +407,11 @@ h5,h6{font-size:1em;}
         position: 'left center'
     });
 
+    var serurl = "http://www.kyosnote.online/";
+    var url = /*[[@{/blog/{id}(id=${blog.id})}]]*/"";
+
     var qrcode = new QRCode("qrcode", {
-        text: "http://localhost:8080/blog",
+        text: serurl+url,
         width: 110,
         height: 110,
         colorDark : "#000000",

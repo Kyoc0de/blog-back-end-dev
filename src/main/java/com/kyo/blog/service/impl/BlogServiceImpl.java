@@ -6,10 +6,12 @@ import com.kyo.blog.exception.NotFoundException;
 import com.kyo.blog.po.Blog;
 import com.kyo.blog.po.Type;
 import com.kyo.blog.service.BlogService;
+import com.kyo.blog.util.MarkdownUtils;
 import com.kyo.blog.util.MyBeanUtils;
 import com.kyo.blog.vo.BlogQuery;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -36,6 +38,20 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Blog getBlog(Long id) {
         return blogRepository.findById(id).get();
+    }
+
+    @Override
+    public Blog getAndConvert(Long id) {
+        Blog blog = blogRepository.findById(id).get();
+        if(blog ==null){
+            throw new NotFoundException("该博客不存在");
+        }
+        Blog b = new Blog();
+        BeanUtils.copyProperties(blog,b);
+        String content = b.getContent();
+
+        b.setContent( MarkdownUtils.markdownToHtmlExtensions(content));
+        return b;
     }
 
 
