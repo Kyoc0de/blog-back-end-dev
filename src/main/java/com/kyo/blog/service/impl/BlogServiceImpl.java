@@ -1,31 +1,30 @@
 package com.kyo.blog.service.impl;
 
+
 import com.kyo.blog.dao.BlogRepository;
 import com.kyo.blog.exception.NotFoundException;
 import com.kyo.blog.po.Blog;
 import com.kyo.blog.po.Type;
 import com.kyo.blog.service.BlogService;
-
 import com.kyo.blog.util.MyBeanUtils;
 import com.kyo.blog.vo.BlogQuery;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.DigestUtils;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 
 @Service
 public class BlogServiceImpl implements BlogService {
@@ -60,6 +59,19 @@ public class BlogServiceImpl implements BlogService {
             }
         },pageable);
     }
+
+    @Override
+    public Page<Blog> listBlog(Pageable pageable) {
+        return blogRepository.findAll(pageable);
+    }
+
+    @Override
+    public List<Blog> listRecommendBlogTop(Integer size) {
+        Sort sort = Sort.by(Sort.Direction.DESC,"updateTime");
+        Pageable pageable = PageRequest.of(0, size, sort);
+        return blogRepository.findTop(pageable);
+    }
+
 
     @Transactional
     @Override
