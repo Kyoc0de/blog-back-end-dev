@@ -10020,3 +10020,385 @@ fragment
 2020-03-02 18:53:20.003  INFO 14376 --- [http-nio-8080-exec-8] com.kyo.blog.aspect.LogAspect            : Result=redirect:/comments/15
 2020-03-02 18:53:20.024  INFO 14376 --- [http-nio-8080-exec-3] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/comments/15', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.CommentController.comments', args=[15, {}]}
 2020-03-02 18:53:20.034  INFO 14376 --- [http-nio-8080-exec-3] com.kyo.blog.aspect.LogAspect            : Result=blog :: commentList
+2020-03-02 19:00:28.174  INFO 14376 --- [Thread-113] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-02 19:00:28.207  INFO 14376 --- [Thread-113] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-03-02 19:00:28.262  INFO 14376 --- [Thread-113] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Shutdown initiated...
+2020-03-02 19:00:28.318  INFO 14376 --- [Thread-113] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Shutdown completed.
+2020-03-02 19:00:31.225  INFO 14376 --- [restartedMain] com.kyo.blog.BlogApplication             : Starting BlogApplication on kyo with PID 14376 (C:\Users\kyois\Desktop\backEnd\target\classes started by kyois in C:\Users\kyois\Desktop\backEnd)
+2020-03-02 19:00:31.226 DEBUG 14376 --- [restartedMain] com.kyo.blog.BlogApplication             : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-02 19:00:31.226  INFO 14376 --- [restartedMain] com.kyo.blog.BlogApplication             : The following profiles are active: dev
+2020-03-02 19:00:31.918  INFO 14376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-02 19:00:31.921  INFO 14376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2ms. Found 0 JPA repository interfaces.
+2020-03-02 19:00:32.512  INFO 14376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-02 19:00:32.531  INFO 14376 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-02 19:00:32.533  INFO 14376 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-02 19:00:32.761  INFO 14376 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-03-02 19:00:32.762  INFO 14376 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1530 ms
+2020-03-02 19:00:33.275  INFO 14376 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-02 19:00:33.345  INFO 14376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Starting...
+2020-03-02 19:00:33.433  INFO 14376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Start completed.
+2020-03-02 19:00:33.434  INFO 14376 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-03-02 19:00:33.493  WARN 14376 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @OneToOne or @ManyToOne on com.kyo.blog.po.Blog.user references an unknown entity: com.kyo.blog.po.User
+2020-03-02 19:00:33.494  INFO 14376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Shutdown initiated...
+2020-03-02 19:00:33.508  INFO 14376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Shutdown completed.
+2020-03-02 19:00:33.512  INFO 14376 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-03-02 19:00:33.541  INFO 14376 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-03-02 19:00:33.554 ERROR 14376 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @OneToOne or @ManyToOne on com.kyo.blog.po.Blog.user references an unknown entity: com.kyo.blog.po.User
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1796)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at com.kyo.blog.BlogApplication.main(BlogApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.hibernate.AnnotationException: @OneToOne or @ManyToOne on com.kyo.blog.po.Blog.user references an unknown entity: com.kyo.blog.po.User
+	at org.hibernate.cfg.ToOneFkSecondPass.doSecondPass(ToOneFkSecondPass.java:97)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processEndOfQueue(InFlightMetadataCollectorImpl.java:1823)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processFkSecondPassesInOrder(InFlightMetadataCollectorImpl.java:1767)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1655)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:286)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1202)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1233)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1855)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1792)
+	... 21 common frames omitted
+
+2020-03-02 19:00:35.914  INFO 14376 --- [restartedMain] com.kyo.blog.BlogApplication             : Starting BlogApplication on kyo with PID 14376 (C:\Users\kyois\Desktop\backEnd\target\classes started by kyois in C:\Users\kyois\Desktop\backEnd)
+2020-03-02 19:00:35.916 DEBUG 14376 --- [restartedMain] com.kyo.blog.BlogApplication             : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-02 19:00:35.916  INFO 14376 --- [restartedMain] com.kyo.blog.BlogApplication             : The following profiles are active: dev
+2020-03-02 19:00:36.947  INFO 14376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-02 19:00:37.070  INFO 14376 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122ms. Found 5 JPA repository interfaces.
+2020-03-02 19:00:37.590  INFO 14376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-02 19:00:37.591  INFO 14376 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-02 19:00:37.591  INFO 14376 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-02 19:00:37.616  INFO 14376 --- [restartedMain] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-03-02 19:00:37.616  INFO 14376 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1693 ms
+2020-03-02 19:00:37.744  INFO 14376 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-02 19:00:37.753  INFO 14376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Starting...
+2020-03-02 19:00:37.784  INFO 14376 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Start completed.
+2020-03-02 19:00:37.784  INFO 14376 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-03-02 19:00:38.054  INFO 14376 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-02 19:00:38.054  INFO 14376 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-02 19:00:38.146  INFO 14376 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-02 19:00:38.972  WARN 14376 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-03-02 19:00:39.331  INFO 14376 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-02 19:00:39.428  INFO 14376 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-02 19:00:40.064  INFO 14376 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-02 19:00:40.066  INFO 14376 --- [restartedMain] com.kyo.blog.BlogApplication             : Started BlogApplication in 4.295 seconds (JVM running for 2155.558)
+2020-03-02 19:00:40.068  INFO 14376 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-03-02 19:00:41.461  INFO 14376 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat-2].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-02 19:00:41.464  INFO 14376 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-02 19:00:41.505  INFO 14376 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 41 ms
+2020-03-02 19:00:41.516  INFO 14376 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/blog/15', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.IndexController.blog', args=[15, {}]}
+2020-03-02 19:00:41.663  INFO 14376 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Result=blog
+2020-03-02 19:00:43.264  INFO 14376 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/comments/15', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.CommentController.comments', args=[15, {}]}
+2020-03-02 19:00:43.299  INFO 14376 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Result=blog :: commentList
+2020-03-02 19:00:44.798  INFO 14376 --- [http-nio-8080-exec-7] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/blog/15', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.IndexController.blog', args=[15, {}]}
+2020-03-02 19:00:44.817  INFO 14376 --- [http-nio-8080-exec-7] com.kyo.blog.aspect.LogAspect            : Result=blog
+2020-03-02 19:00:45.658  INFO 14376 --- [http-nio-8080-exec-8] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/comments/15', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.CommentController.comments', args=[15, {}]}
+2020-03-02 19:00:45.666  INFO 14376 --- [http-nio-8080-exec-8] com.kyo.blog.aspect.LogAspect            : Result=blog :: commentList
+2020-03-02 19:00:53.659  INFO 14376 --- [http-nio-8080-exec-7] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/blog/15', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.IndexController.blog', args=[15, {}]}
+2020-03-02 19:00:53.673  INFO 14376 --- [http-nio-8080-exec-7] com.kyo.blog.aspect.LogAspect            : Result=blog
+2020-03-02 19:00:54.366  INFO 14376 --- [http-nio-8080-exec-8] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/comments/15', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.CommentController.comments', args=[15, {}]}
+2020-03-02 19:00:54.381  INFO 14376 --- [http-nio-8080-exec-8] com.kyo.blog.aspect.LogAspect            : Result=blog :: commentList
+2020-03-02 19:00:57.162  INFO 14376 --- [http-nio-8080-exec-2] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/blog/15', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.IndexController.blog', args=[15, {}]}
+2020-03-02 19:00:57.176  INFO 14376 --- [http-nio-8080-exec-2] com.kyo.blog.aspect.LogAspect            : Result=blog
+2020-03-02 19:00:57.835  INFO 14376 --- [http-nio-8080-exec-10] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/comments/15', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.CommentController.comments', args=[15, {}]}
+2020-03-02 19:00:57.848  INFO 14376 --- [http-nio-8080-exec-10] com.kyo.blog.aspect.LogAspect            : Result=blog :: commentList
+2020-03-02 19:00:59.943  INFO 14376 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/blog/15', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.IndexController.blog', args=[15, {}]}
+2020-03-02 19:00:59.955  INFO 14376 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Result=blog
+2020-03-02 19:01:00.572  INFO 14376 --- [http-nio-8080-exec-7] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/comments/15', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.CommentController.comments', args=[15, {}]}
+2020-03-02 19:01:00.587  INFO 14376 --- [http-nio-8080-exec-7] com.kyo.blog.aspect.LogAspect            : Result=blog :: commentList
+2020-03-02 20:26:01.949  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Starting BlogApplication on kyo with PID 744 (C:\Users\kyois\Desktop\backEnd\target\classes started by kyois in C:\Users\kyois\Desktop\backEnd)
+2020-03-02 20:26:01.959 DEBUG 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-02 20:26:01.960  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : The following profiles are active: dev
+2020-03-02 20:26:02.078  INFO 744 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\kyois\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/kyois/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/kyois/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/kyois/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/kyois/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/kyois/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/kyois/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar
+2020-03-02 20:26:02.080  INFO 744 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-03-02 20:26:02.082  INFO 744 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-03-02 20:26:03.487  INFO 744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-02 20:26:03.629  INFO 744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 127ms. Found 5 JPA repository interfaces.
+2020-03-02 20:26:04.766  INFO 744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-02 20:26:04.780  INFO 744 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-02 20:26:04.780  INFO 744 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-02 20:26:04.896  INFO 744 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-02 20:26:04.896  INFO 744 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2814 ms
+2020-03-02 20:26:05.244  INFO 744 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-02 20:26:05.344  INFO 744 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-03-02 20:26:05.547  INFO 744 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-03-02 20:26:05.683  INFO 744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-03-02 20:26:06.441  INFO 744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-03-02 20:26:06.464  INFO 744 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-03-02 20:26:07.841  INFO 744 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-02 20:26:07.855  INFO 744 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-02 20:26:07.942  INFO 744 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-02 20:26:09.107  WARN 744 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-03-02 20:26:09.653  INFO 744 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-02 20:26:09.796  INFO 744 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-02 20:26:10.285  INFO 744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-02 20:26:10.289  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Started BlogApplication in 9.501 seconds (JVM running for 11.186)
+2020-03-02 20:26:10.367  INFO 744 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-02 20:26:10.368  INFO 744 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-02 20:26:10.383  INFO 744 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2020-03-02 20:26:10.428  INFO 744 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.kyo.blog.web.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2020-03-02 20:26:10.596  WARN 744 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-03-02 20:26:10.619  WARN 744 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-03-02 20:26:10.628  INFO 744 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Result=index
+2020-03-02 20:26:15.496  INFO 744 --- [http-nio-8080-exec-8] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], -1, {}]}
+2020-03-02 20:26:15.522  INFO 744 --- [http-nio-8080-exec-8] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:26:22.886  INFO 744 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/2', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 2, {}]}
+2020-03-02 20:26:22.899  INFO 744 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:26:24.342  INFO 744 --- [http-nio-8080-exec-4] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/6', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 6, {}]}
+2020-03-02 20:26:24.360  INFO 744 --- [http-nio-8080-exec-4] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:26:26.523  INFO 744 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/3', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 3, {}]}
+2020-03-02 20:26:26.537  INFO 744 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:26:28.960  INFO 744 --- [http-nio-8080-exec-5] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/4', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 4, {}]}
+2020-03-02 20:26:28.976  INFO 744 --- [http-nio-8080-exec-5] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:26:30.318  INFO 744 --- [http-nio-8080-exec-8] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/5', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 5, {}]}
+2020-03-02 20:26:30.331  INFO 744 --- [http-nio-8080-exec-8] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:26:31.688  INFO 744 --- [http-nio-8080-exec-3] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/10', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 10, {}]}
+2020-03-02 20:26:31.700  INFO 744 --- [http-nio-8080-exec-3] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:28:33.669  INFO 744 --- [Thread-19] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-02 20:28:33.688  INFO 744 --- [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-03-02 20:28:34.126  INFO 744 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-03-02 20:28:34.224  INFO 744 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-03-02 20:28:35.645  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Starting BlogApplication on kyo with PID 744 (C:\Users\kyois\Desktop\backEnd\target\classes started by kyois in C:\Users\kyois\Desktop\backEnd)
+2020-03-02 20:28:35.645 DEBUG 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-02 20:28:35.646  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : The following profiles are active: dev
+2020-03-02 20:28:36.651  INFO 744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-02 20:28:36.656  INFO 744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3ms. Found 0 JPA repository interfaces.
+2020-03-02 20:28:37.350  INFO 744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-02 20:28:37.352  INFO 744 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-02 20:28:37.353  INFO 744 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-02 20:28:37.406  INFO 744 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-02 20:28:37.406  INFO 744 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1753 ms
+2020-03-02 20:28:37.482  INFO 744 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-02 20:28:37.496  INFO 744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-03-02 20:28:37.550  INFO 744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-03-02 20:28:37.551  INFO 744 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-03-02 20:28:37.908  INFO 744 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-02 20:28:37.909  INFO 744 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-02 20:28:37.934  INFO 744 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-02 20:28:37.985  WARN 744 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-03-02 20:28:38.179  INFO 744 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-02 20:28:38.219  INFO 744 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-02 20:28:38.849  INFO 744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-02 20:28:38.851  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Started BlogApplication in 3.341 seconds (JVM running for 159.748)
+2020-03-02 20:28:38.854  INFO 744 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-03-02 20:28:40.602  INFO 744 --- [Thread-32] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-02 20:28:40.603  INFO 744 --- [Thread-32] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-03-02 20:28:40.604  INFO 744 --- [Thread-32] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2020-03-02 20:28:40.613  INFO 744 --- [Thread-32] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2020-03-02 20:28:41.244  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Starting BlogApplication on kyo with PID 744 (C:\Users\kyois\Desktop\backEnd\target\classes started by kyois in C:\Users\kyois\Desktop\backEnd)
+2020-03-02 20:28:41.245 DEBUG 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-02 20:28:41.245  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : The following profiles are active: dev
+2020-03-02 20:28:41.948  INFO 744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-02 20:28:41.999  INFO 744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50ms. Found 5 JPA repository interfaces.
+2020-03-02 20:28:42.405  INFO 744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-02 20:28:42.406  INFO 744 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-02 20:28:42.406  INFO 744 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-02 20:28:42.436  INFO 744 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-02 20:28:42.437  INFO 744 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1186 ms
+2020-03-02 20:28:42.599  INFO 744 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-02 20:28:42.633  INFO 744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2020-03-02 20:28:42.681  INFO 744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2020-03-02 20:28:42.681  INFO 744 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-03-02 20:28:42.947  INFO 744 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-02 20:28:42.948  INFO 744 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-02 20:28:43.057  INFO 744 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-02 20:28:44.137  WARN 744 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-03-02 20:28:44.591  INFO 744 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-02 20:28:44.668  INFO 744 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-02 20:28:45.121  INFO 744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-02 20:28:45.122  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Started BlogApplication in 3.951 seconds (JVM running for 166.019)
+2020-03-02 20:28:45.123  INFO 744 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-03-02 20:28:47.858  INFO 744 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-02 20:28:47.861  INFO 744 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-02 20:28:47.873  INFO 744 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2020-03-02 20:28:47.881  INFO 744 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/10', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 10, {}]}
+2020-03-02 20:28:47.888  WARN 744 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-03-02 20:28:47.916  INFO 744 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:28:52.379  INFO 744 --- [http-nio-8080-exec-4] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/2', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 2, {}]}
+2020-03-02 20:28:52.395  INFO 744 --- [http-nio-8080-exec-4] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:28:54.312  INFO 744 --- [http-nio-8080-exec-5] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/6', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 6, {}]}
+2020-03-02 20:28:54.324  INFO 744 --- [http-nio-8080-exec-5] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:28:56.579  INFO 744 --- [http-nio-8080-exec-4] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/3', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 3, {}]}
+2020-03-02 20:28:56.593  INFO 744 --- [http-nio-8080-exec-4] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:28:58.207  INFO 744 --- [http-nio-8080-exec-3] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/4', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 4, {}]}
+2020-03-02 20:28:58.219  INFO 744 --- [http-nio-8080-exec-3] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:28:59.563  INFO 744 --- [http-nio-8080-exec-7] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/5', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 5, {}]}
+2020-03-02 20:28:59.572  INFO 744 --- [http-nio-8080-exec-7] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:29:00.607  INFO 744 --- [http-nio-8080-exec-5] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/10', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 10, {}]}
+2020-03-02 20:29:00.616  INFO 744 --- [http-nio-8080-exec-5] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:29:01.732  INFO 744 --- [http-nio-8080-exec-6] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/2', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 2, {}]}
+2020-03-02 20:29:01.748  INFO 744 --- [http-nio-8080-exec-6] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:30:49.193  INFO 744 --- [Thread-37] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-02 20:30:49.202  INFO 744 --- [Thread-37] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-03-02 20:30:49.218  INFO 744 --- [Thread-37] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2020-03-02 20:30:49.250  INFO 744 --- [Thread-37] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2020-03-02 20:30:50.960  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Starting BlogApplication on kyo with PID 744 (C:\Users\kyois\Desktop\backEnd\target\classes started by kyois in C:\Users\kyois\Desktop\backEnd)
+2020-03-02 20:30:50.961 DEBUG 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-02 20:30:50.961  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : The following profiles are active: dev
+2020-03-02 20:30:51.740  INFO 744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-02 20:30:51.742  INFO 744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 JPA repository interfaces.
+2020-03-02 20:30:52.135  INFO 744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-02 20:30:52.137  INFO 744 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-02 20:30:52.137  INFO 744 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-02 20:30:52.171  INFO 744 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-02 20:30:52.172  INFO 744 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1203 ms
+2020-03-02 20:30:52.235  INFO 744 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-02 20:30:52.246  INFO 744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2020-03-02 20:30:52.287  INFO 744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2020-03-02 20:30:52.288  INFO 744 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-03-02 20:30:52.412  INFO 744 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-02 20:30:52.412  INFO 744 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-02 20:30:52.436  INFO 744 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-02 20:30:52.480  WARN 744 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-03-02 20:30:52.596  INFO 744 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-02 20:30:52.656  INFO 744 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-02 20:30:53.174  INFO 744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-02 20:30:53.175  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Started BlogApplication in 2.37 seconds (JVM running for 294.073)
+2020-03-02 20:30:53.181  INFO 744 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-03-02 20:30:55.819  INFO 744 --- [Thread-42] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-02 20:30:55.821  INFO 744 --- [Thread-42] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-03-02 20:30:55.822  INFO 744 --- [Thread-42] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2020-03-02 20:30:55.838  INFO 744 --- [Thread-42] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2020-03-02 20:30:56.563  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Starting BlogApplication on kyo with PID 744 (C:\Users\kyois\Desktop\backEnd\target\classes started by kyois in C:\Users\kyois\Desktop\backEnd)
+2020-03-02 20:30:56.564 DEBUG 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-02 20:30:56.565  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : The following profiles are active: dev
+2020-03-02 20:30:57.489  INFO 744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-02 20:30:57.566  INFO 744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75ms. Found 5 JPA repository interfaces.
+2020-03-02 20:30:57.985  INFO 744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-02 20:30:57.986  INFO 744 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-02 20:30:57.987  INFO 744 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-02 20:30:58.019  INFO 744 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-02 20:30:58.019  INFO 744 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1449 ms
+2020-03-02 20:30:58.167  INFO 744 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-02 20:30:58.175  INFO 744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2020-03-02 20:30:58.213  INFO 744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2020-03-02 20:30:58.214  INFO 744 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-03-02 20:30:58.569  INFO 744 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-02 20:30:58.569  INFO 744 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-02 20:30:58.674  INFO 744 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-02 20:30:59.426  WARN 744 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-03-02 20:30:59.760  INFO 744 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-02 20:30:59.835  INFO 744 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-02 20:31:00.284  INFO 744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-02 20:31:00.285  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Started BlogApplication in 3.813 seconds (JVM running for 301.182)
+2020-03-02 20:31:00.286  INFO 744 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-03-02 20:31:06.149  INFO 744 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-02 20:31:06.150  INFO 744 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-02 20:31:06.158  INFO 744 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-03-02 20:31:06.167  INFO 744 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/2', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 2, {}]}
+2020-03-02 20:31:06.173  WARN 744 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-03-02 20:31:06.202  INFO 744 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:31:08.041  INFO 744 --- [http-nio-8080-exec-3] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/3', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 3, {}]}
+2020-03-02 20:31:08.065  INFO 744 --- [http-nio-8080-exec-3] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:31:09.729  INFO 744 --- [http-nio-8080-exec-2] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/4', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 4, {}]}
+2020-03-02 20:31:09.739  INFO 744 --- [http-nio-8080-exec-2] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:31:10.918  INFO 744 --- [http-nio-8080-exec-8] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/5', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 5, {}]}
+2020-03-02 20:31:10.928  INFO 744 --- [http-nio-8080-exec-8] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:31:12.003  INFO 744 --- [http-nio-8080-exec-9] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/10', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 10, {}]}
+2020-03-02 20:31:12.014  INFO 744 --- [http-nio-8080-exec-9] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:31:13.194  INFO 744 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/2', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 2, {}]}
+2020-03-02 20:31:13.203  INFO 744 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:31:39.352  INFO 744 --- [Thread-47] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-02 20:31:39.359  INFO 744 --- [Thread-47] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-03-02 20:31:39.377  INFO 744 --- [Thread-47] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2020-03-02 20:31:39.390  INFO 744 --- [Thread-47] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2020-03-02 20:31:40.767  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Starting BlogApplication on kyo with PID 744 (C:\Users\kyois\Desktop\backEnd\target\classes started by kyois in C:\Users\kyois\Desktop\backEnd)
+2020-03-02 20:31:40.767 DEBUG 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-02 20:31:40.767  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : The following profiles are active: dev
+2020-03-02 20:31:41.179  INFO 744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-02 20:31:41.180  INFO 744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1ms. Found 0 JPA repository interfaces.
+2020-03-02 20:31:41.426  INFO 744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-02 20:31:41.427  INFO 744 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-02 20:31:41.428  INFO 744 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-02 20:31:41.465  INFO 744 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-02 20:31:41.466  INFO 744 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 690 ms
+2020-03-02 20:31:41.549  INFO 744 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-02 20:31:41.565  INFO 744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2020-03-02 20:31:41.611  INFO 744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2020-03-02 20:31:41.612  INFO 744 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-03-02 20:31:41.771  INFO 744 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-02 20:31:41.771  INFO 744 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-02 20:31:41.802  INFO 744 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-02 20:31:41.854  WARN 744 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-03-02 20:31:41.957  INFO 744 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-02 20:31:41.989  INFO 744 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-02 20:31:42.308  INFO 744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-02 20:31:42.309  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Started BlogApplication in 1.88 seconds (JVM running for 343.206)
+2020-03-02 20:31:42.311  INFO 744 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-03-02 20:31:45.235  INFO 744 --- [Thread-52] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-03-02 20:31:45.236  INFO 744 --- [Thread-52] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-03-02 20:31:45.237  INFO 744 --- [Thread-52] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2020-03-02 20:31:45.246  INFO 744 --- [Thread-52] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2020-03-02 20:31:45.721  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Starting BlogApplication on kyo with PID 744 (C:\Users\kyois\Desktop\backEnd\target\classes started by kyois in C:\Users\kyois\Desktop\backEnd)
+2020-03-02 20:31:45.722 DEBUG 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Running with Spring Boot v2.2.5.RELEASE, Spring v5.2.4.RELEASE
+2020-03-02 20:31:45.722  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : The following profiles are active: dev
+2020-03-02 20:31:46.093  INFO 744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-03-02 20:31:46.130  INFO 744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36ms. Found 5 JPA repository interfaces.
+2020-03-02 20:31:46.357  INFO 744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-02 20:31:46.360  INFO 744 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-02 20:31:46.360  INFO 744 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-03-02 20:31:46.378  INFO 744 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-02 20:31:46.378  INFO 744 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 654 ms
+2020-03-02 20:31:46.490  INFO 744 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-03-02 20:31:46.498  INFO 744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2020-03-02 20:31:46.538  INFO 744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2020-03-02 20:31:46.539  INFO 744 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-03-02 20:31:46.897  INFO 744 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-03-02 20:31:46.898  INFO 744 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-03-02 20:31:47.027  INFO 744 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-03-02 20:31:48.241  WARN 744 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-03-02 20:31:48.417  INFO 744 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-02 20:31:48.475  INFO 744 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-02 20:31:48.793  INFO 744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-02 20:31:48.794  INFO 744 --- [restartedMain] com.kyo.blog.BlogApplication             : Started BlogApplication in 3.124 seconds (JVM running for 349.691)
+2020-03-02 20:31:48.796  INFO 744 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-03-02 20:31:54.816  INFO 744 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-02 20:31:54.818  INFO 744 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-02 20:31:54.841  INFO 744 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 23 ms
+2020-03-02 20:31:54.848  INFO 744 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.IndexController.index', args=[Page request [number: 0, size 8, sort: updateTime: DESC], {}]}
+2020-03-02 20:31:54.883  WARN 744 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-03-02 20:31:54.892  WARN 744 --- [http-nio-8080-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-03-02 20:31:54.899  INFO 744 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Result=index
+2020-03-02 20:31:56.451  INFO 744 --- [http-nio-8080-exec-4] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], -1, {}]}
+2020-03-02 20:31:56.469  INFO 744 --- [http-nio-8080-exec-4] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:31:58.451  INFO 744 --- [http-nio-8080-exec-6] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/6', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 6, {}]}
+2020-03-02 20:31:58.469  INFO 744 --- [http-nio-8080-exec-6] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:32:00.229  INFO 744 --- [http-nio-8080-exec-4] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/2', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 2, {}]}
+2020-03-02 20:32:00.239  INFO 744 --- [http-nio-8080-exec-4] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:32:01.519  INFO 744 --- [http-nio-8080-exec-6] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/3', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 3, {}]}
+2020-03-02 20:32:01.528  INFO 744 --- [http-nio-8080-exec-6] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:32:02.644  INFO 744 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/4', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 4, {}]}
+2020-03-02 20:32:02.655  INFO 744 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:32:03.677  INFO 744 --- [http-nio-8080-exec-10] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/5', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 5, {}]}
+2020-03-02 20:32:03.684  INFO 744 --- [http-nio-8080-exec-10] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:32:04.674  INFO 744 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/10', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 10, {}]}
+2020-03-02 20:32:04.681  INFO 744 --- [http-nio-8080-exec-1] com.kyo.blog.aspect.LogAspect            : Result=types
+2020-03-02 20:32:09.354  INFO 744 --- [http-nio-8080-exec-8] com.kyo.blog.aspect.LogAspect            : Request: {url='http://localhost:8080/types/2', ip='0:0:0:0:0:0:0:1', classMethod='com.kyo.blog.web.TypeShowController.types', args=[Page request [number: 0, size 8, sort: updateTime: DESC], 2, {}]}
+2020-03-02 20:32:09.365  INFO 744 --- [http-nio-8080-exec-8] com.kyo.blog.aspect.LogAspect            : Result=types

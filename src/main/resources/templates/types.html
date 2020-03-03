@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="_fragments :: head(~{::title})">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>首页</title>
@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="../static/css/kyo.css">
 </head>
 <body>
-<!--导航-->
-<nav class="ui inverted attached segment k-padded-tb-mini">
+<nav th:replace="_fragments :: menu(2)"  class="ui inverted attached segment k-padded-tb-mini">
     <div class="ui container">
         <div class="ui inverted secondary stackable  menu">
             <h2 class="ui header item"> Kyo's Blog</h2>
@@ -37,120 +36,68 @@
 
     <div class="k-container-small k-padded-tb-large">
         <div class="ui container">
-<!--            header-->
-            <div class="ui top attached black tertiary segment">
+            <!--header-->
+            <div class="ui top attached segment">
                 <div class="ui middle aligned two column grid">
                     <div class="column">
-                        <h3 class="ui header">分类</h3>
+                        <h3 class="ui teal header">分类</h3>
                     </div>
                     <div class="right aligned column">
-                        共 <h2 class="ui header k-inline-block"> &nbsp; 15 </h2> 个
+                        共 <h2 class="ui orange header k-inline-block k-text-thin" th:text="${#arrays.length(types)}"> 14 </h2> 个
                     </div>
                 </div>
             </div>
+
             <div class="ui attached segment k-padded-tb-large">
-                <div class="ui labeled button k-margin-tb-tiny">
-                    <a href="#" class="ui basic blue button">Springboot后端</a>
-                    <div class="ui basic blue left pointing label">10</div>
-                </div>
-<!--                copy-->
-                <div class="ui labeled button k-margin-tb-tiny">
-                    <a href="#" class="ui basic  button">Springboot后端</a>
-                    <div class="ui basic  left pointing label">10</div>
-                </div>
-                <div class="ui labeled button k-margin-tb-tiny">
-                    <a href="#" class="ui basic  button">Springboot后端</a>
-                    <div class="ui basic  left pointing label">10</div>
-                </div>
-                <div class="ui labeled button k-margin-tb-tiny">
-                    <a href="#" class="ui basic  button">Springboot后端</a>
-                    <div class="ui basic  left pointing label">10</div>
-                </div>
-                <div class="ui labeled button k-margin-tb-tiny">
-                    <a href="#" class="ui basic  button">Springboot后端</a>
-                    <div class="ui basic  left pointing label">10</div>
+                <div class="ui labeled button k-margin-tb-tiny" th:each="type : ${types}">
+                    <a href="#" th:href="@{/types/{id}(id=${type.id})}" class="ui basic  button" th:classappend="${type.id==activeTypeId} ? 'teal'" th:text="${type.name}">思考与感悟</a>
+                    <div class="ui basic  left pointing label" th:classappend="${type.id==activeTypeId} ? 'teal'" th:text="${#arrays.length(type.blogs)}">24</div>
                 </div>
             </div>
 
             <div class="ui top attached blue segment">
-                <div class="ui padded vertical segment k-padded-tb-large">
-                    <div class="ui mobile reversed stackable grid">
-                        <div class="twelve wide column">
-                            <h3 class="ui header"><a href="blog.html">测试用标题</a></h3>
-                            <p class="k-text">测试用段落内容,并没有实际内容,只是为了测试占位,进一步内容有待后续开发...</p>
+                <div class="ui padded vertical segment k-padded-tb-large" th:each="blog : ${page.content}">
+                    <div class="ui middle aligned mobile reversed stackable grid" >
+                        <div class="eleven wide column">
+                            <h3 class="ui header" ><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗?</a></h3>
+                            <p class="m-text" th:text="|${blog.description}......|">正确做好任何一件事情的前提是清晰、正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义，甚至根本从来就没有想过，只是大家都那么做而已…...</p>
                             <div class="ui grid">
                                 <div class="eleven wide column">
                                     <div class="ui mini horizontal link list">
                                         <div class="item">
-                                            <img src="https://unsplash.it/100/100?image=1001" alt="" class="ui avatar image">
-                                            <div class="content">
-                                                <a href="#" class="header">Kyo</a>
-                                            </div>
+                                            <img src="https://unsplash.it/100/100?image=1005" th:src="@{${blog.user.avatar}}"  alt="" class="ui avatar image">
+                                            <div class="content"><a href="#" class="header" th:text="${blog.user.nickname}" >kyo</a></div>
                                         </div>
                                         <div class="item">
-                                            <i class="calendar icon"></i> 2020-02-01
+                                            <i class="calendar icon"></i><span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2020-10-01</span>
                                         </div>
                                         <div class="item">
-                                            <i class="eye icon"></i> 100
+                                            <i class="eye icon"></i> <span th:text="${blog.views}">2342</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="right aligned five wide column">
-                                    <a href="#" class="ui blue mini label k-text-thin">前端开发</a>
+                                    <a href="#" target="_blank" class="ui teal basic label m-padded-tiny m-text-thin" th:text="${blog.type.name}">认知升级</a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="middle aligned four wide column">
-                            <a href="#" target="_blank">
-                                <img src="https://images.unsplash.com/photo-1559163499-413811fb2344?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="" class="ui rounded image">
+                        <div class="five wide column">
+                            <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                                <img src="https://unsplash.it/800/450?image=1005" th:src="@{${blog.firstPicture}}"  alt="" class="ui rounded image">
                             </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="ui padded vertical segment k-padded-tb-large">
-                    <div class="ui mobile reversed stackable grid">
-                        <div class="twelve wide column">
-                            <h3 class="ui header"><a href="blog.html">测试用标题</a></h3>
-                            <p class="k-text">测试用段落内容,并没有实际内容,只是为了测试占位,进一步内容有待后续开发...</p>
-                            <div class="ui grid">
-                                <div class="eleven wide column">
-                                    <div class="ui mini horizontal link list">
-                                        <div class="item">
-                                            <img src="https://unsplash.it/100/100?image=1001" alt="" class="ui avatar image">
-                                            <div class="content">
-                                                <a href="#" class="header">Kyo</a>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <i class="calendar icon"></i> 2020-02-01
-                                        </div>
-                                        <div class="item">
-                                            <i class="eye icon"></i> 100
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="right aligned five wide column">
-                                    <a href="#" class="ui blue mini label k-text-thin">前端开发</a>
-                                </div>
-                            </div>
                         </div>
 
-                        <div class="middle aligned four wide column">
-                            <a href="#" target="_blank">
-                                <img src="https://images.unsplash.com/photo-1559163499-413811fb2344?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="" class="ui rounded image">
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="ui bottom attached segment">
+            <div class="ui bottom attached segment" th:if="${page.totalPages}>1">
                 <div class="ui middle aligned two column grid">
                     <div class="column">
-                        <a href="#" class="ui mini button">上一页</a>
+                        <a href="#" th:href="@{/(page=${page.number}-1)}"  th:unless="${page.first}" class="ui mini button">上一页</a>
                     </div>
                     <div class="right aligned column">
-                        <a href="#" class="ui mini button">下一页</a>
+                        <a href="#" th:href="@{/(page=${page.number}+1)}"  th:unless="${page.last}" class="ui mini button">下一页</a>
                     </div>
                 </div>
             </div>
@@ -159,7 +106,7 @@
 
 
 <!--底部-->
-<footer class="ui inverted vertical segment k-padded-tb-big">
+<footer th:replace="_fragments :: footer" class="ui inverted vertical segment k-padded-tb-big">
     <div class="ui center aligned container">
         <div class="ui inverted divided stackable grid">
             <div class="three wide column">
@@ -197,10 +144,12 @@
     </div>
 </footer>
 
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
 <!-- jquery -->
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 <!-- semantic js -->
 <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<!--/*/</th:block>/*/-->
 
 <!--导航隐藏显示切换-->
 <script>
