@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="_fragments :: head(~{::title})">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>首页</title>
@@ -11,7 +11,7 @@
 </head>
 <body>
 <!--导航-->
-<nav class="ui inverted attached segment k-padded-tb-mini">
+<nav th:replace="_fragments :: menu(4)" class="ui inverted attached segment k-padded-tb-mini">
     <div class="ui container">
         <div class="ui inverted secondary stackable  menu">
             <h2 class="ui header item"> Kyo's Blog</h2>
@@ -33,77 +33,42 @@
     </a>
 </nav>
 
-<!--中间内容-->
 
-    <div class="k-container-small k-padded-tb-large">
-        <div class="ui container">
-<!--            header-->
-            <div class="ui top attached padded black tertiary segment">
-                <div class="ui middle aligned two column grid">
-                    <div class="column">
-                        <h3 class="ui header">归档</h3>
-                    </div>
-                    <div class="right aligned column">
-                        共 <h2 class="ui header k-inline-block"> &nbsp; 15 </h2> 篇
-                    </div>
+<!--中间内容-->
+<div  class="k-container-small k-padded-tb-big">
+    <div class="ui container">
+        <!--header-->
+        <div class="ui top attached padded segment">
+            <div class="ui middle aligned two column grid">
+                <div class="column">
+                    <h3 class="ui teal header">归档</h3>
+                </div>
+                <div class="right aligned column">
+                    共 <h2 class="ui orange header k-inline-block k-text-thin" th:text="${blogCount}"> 114 </h2> 篇博客
                 </div>
             </div>
-
-            <h2 class="ui center aligned header">2020</h2>
-            <div class="ui fluid vertical menu">
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="  circle icon"></i> 预制使用的占位标题
-                        <div class="ui blue left pointing label mini ">1月1号</div>
-                    </span>
-                    <div class="ui orange basic left pointing label mini">原创</div>
-                </a>
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="  circle icon"></i> 预制使用的占位标题
-                        <div class="ui blue left pointing label mini ">1月1号</div>
-                    </span>
-                    <div class="ui orange basic left pointing label mini">原创</div>
-                </a>
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="  circle icon"></i> 预制使用的占位标题
-                        <div class="ui blue left pointing label mini ">1月1号</div>
-                    </span>
-                    <div class="ui orange basic left pointing label mini">原创</div>
-                </a>
-            </div>
-            <h2 class="ui center aligned header">2019</h2>
-            <div class="ui fluid vertical menu">
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="circle icon"></i>预制使用的占位标题
-                        <div class="ui blue left pointing label mini ">1月1号</div>
-                    </span>
-                    <div class="ui orange basic left pointing label mini">原创</div>
-                </a>
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="  circle icon"></i> 预制使用的占位标题
-                        <div class="ui blue left pointing label mini ">1月1号</div>
-                    </span>
-                    <div class="ui orange basic left pointing label mini">原创</div>
-                </a>
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="  circle icon"></i> 预制使用的占位标题
-                        <div class="ui blue left pointing label mini ">1月1号</div>
-                    </span>
-                    <div class="ui orange basic left pointing label mini">原创</div>
-                </a>
-            </div>
-
         </div>
+
+        <th:block th:each="item : ${archiveMap}">
+            <h3 class="ui center aligned header" th:text="${item.key}">2017</h3>
+            <div class="ui fluid vertical menu">
+                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="item" th:each="blog : ${item.value}">
+          <span>
+            <i class=" teal circle icon"></i><span th:text="${blog.title}">关于刻意练习的清单</span>
+            <div class="ui teal basic left pointing label k-padded-mini " th:text="${#dates.format(blog.updateTime,'MMMdd')}">9月03</div>
+          </span>
+                    <div class="ui orange basic left pointing label k-padded-mini " th:text="${blog.flag}">原创</div>
+                </a>
+
+            </div>
+        </th:block>
+
     </div>
+</div>
 
 
 <!--底部-->
-<footer class="ui inverted vertical segment k-padded-tb-big">
+<footer th:replace="_fragments :: footer" class="ui inverted vertical segment k-padded-tb-big">
     <div class="ui center aligned container">
         <div class="ui inverted divided stackable grid">
             <div class="three wide column">
@@ -141,11 +106,10 @@
     </div>
 </footer>
 
-<!-- jquery -->
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-<!-- semantic js -->
-<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<!--/*/</th:block>/*/-->
 <!--导航隐藏显示切换-->
 <script>
     $('.menu.toggle').click(function () {
