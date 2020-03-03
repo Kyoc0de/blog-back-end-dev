@@ -58,10 +58,14 @@
             </div>
             <div class="three wide column">
                 <h4 class="ui inverted header k-text-lined k-text-spaced k-opacity-mini">最新动态</h4>
-                <div class="ui inverted link list">
-                    <a href="#" class="item">博客搭建日志1</a>
+                <div id="newblog-container">
+                    <div class="ui inverted link list" th:fragment="newblogList">
+                    <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="item k-text-thin" th:each="blog : ${newblogs}" th:text="${blog.title}">用户故事（User Story）</a>
+                    <!--/*-->
                     <a href="#" class="item">博客搭建日志2</a>
                     <a href="#" class="item">博客搭建日志3</a>
+                    <!--*/-->
+                </div>
                 </div>
             </div>
             <div class="three wide column">
@@ -101,6 +105,10 @@
 
     <!---->
     <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
+
+    <script>
+        $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
+    </script>
 </th:block>
 </body>
 </html>
